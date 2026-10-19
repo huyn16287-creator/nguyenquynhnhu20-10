@@ -1,0 +1,1061 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#ffe4ef">
+<title>Gửi Mẹ Yêu | 20.10 ♡</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Quicksand:wght@400;500;600;700&display=swap');
+
+:root {
+  --pink: #ed76a2;
+  --deep: #a93667;
+  --light: #fff0f6;
+  --gold: #d8ad65;
+  --white: #fffafc;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Quicksand', sans-serif;
+  background: #fff7fa;
+  color: #74334f;
+  overflow-x: hidden;
+}
+
+button, input { font: inherit; }
+
+button { -webkit-tap-highlight-color: transparent; }
+
+button:focus-visible, input:focus-visible {
+  outline: 3px solid #b94e7b;
+  outline-offset: 3px;
+}
+
+#opening {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 24px;
+  background:
+    radial-gradient(circle at 20% 20%, #ffffffc9, transparent 30%),
+    radial-gradient(circle at 80% 80%, #ffc8df, transparent 35%),
+    linear-gradient(135deg, #ffeaf2, #f9d1e1, #fff6fa);
+  transition: opacity 1s, visibility 1s;
+}
+
+#opening.closed {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.eyebrow {
+  letter-spacing: 4px;
+  font-size: 11px;
+  text-transform: uppercase;
+  color: #a65d7d;
+}
+
+.open-flower {
+  font-size: clamp(75px, 17vw, 125px);
+  margin: 20px 0;
+  filter: drop-shadow(0 12px 20px #c04d7940);
+  animation: flowerFloat 3s infinite ease-in-out;
+}
+
+.script {
+  font-family: 'Dancing Script', cursive;
+  font-weight: 700;
+}
+
+#opening h1 {
+  color: var(--deep);
+  font-size: clamp(35px, 8vw, 70px);
+  margin: 15px 0;
+}
+
+#opening p {
+  max-width: 450px;
+  line-height: 1.9;
+  margin-bottom: 20px;
+}
+
+.primary, .secondary {
+  border: 0;
+  border-radius: 999px;
+  padding: 14px 25px;
+  cursor: pointer;
+  transition: .25s;
+}
+
+.primary {
+  color: white;
+  background: linear-gradient(120deg, #e879a3, #bd4e7a);
+  box-shadow: 0 8px 25px #ce62874a;
+}
+
+.secondary {
+  color: #a53c67;
+  background: #fff0f6;
+  border: 1px solid #f2c1d4;
+}
+
+.primary:hover, .secondary:hover {
+  transform: translateY(-3px);
+  filter: brightness(1.03);
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  padding: 12px 5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  background: #fffaf2eF;
+  backdrop-filter: blur(15px);
+  border-bottom: 1px solid #f5dce6;
+}
+
+.brand {
+  color: var(--deep);
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.music-button {
+  border: 1px solid #f0cada;
+  background: white;
+  color: var(--deep);
+  border-radius: 50px;
+  padding: 9px 13px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.hero {
+  min-height: 80vh;
+  padding: 75px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse at 50% 80%, #ffc8dd9c, transparent 50%),
+    linear-gradient(#fff8fb, #ffe8f1);
+}
+
+.hero-inner { max-width: 780px; }
+
+.hero h1 {
+  color: #a93667;
+  font-size: clamp(45px, 10vw, 92px);
+  line-height: 1.1;
+  margin: 20px 0;
+}
+
+.hero p {
+  font-size: 16px;
+  line-height: 2;
+  max-width: 580px;
+  margin: 0 auto 25px;
+}
+
+.hero-flower {
+  font-size: clamp(60px, 12vw, 100px);
+  animation: flowerFloat 4s infinite;
+  filter: drop-shadow(0 12px 15px #c95c8240);
+}
+
+.pill {
+  display: inline-block;
+  padding: 8px 15px;
+  border-radius: 50px;
+  background: #ffffffa8;
+  border: 1px solid #f2c8d8;
+  color: #9c4b6d;
+  font-size: 12px;
+}
+
+section {
+  padding: 75px 6%;
+  scroll-margin-top: 65px;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.section-title .mini {
+  color: #bd7691;
+  letter-spacing: 3px;
+  font-size: 11px;
+  text-transform: uppercase;
+}
+
+.section-title h2 {
+  color: var(--deep);
+  font-size: clamp(30px, 6vw, 48px);
+  margin: 12px 0;
+}
+
+.section-title p {
+  color: #95667a;
+  line-height: 1.8;
+}
+
+.letter-section {
+  background: linear-gradient(180deg, #fff7fa, #fff0f5);
+}
+
+.paper {
+  max-width: 760px;
+  margin: auto;
+  padding: clamp(24px, 6vw, 55px);
+  background: #fffdfb;
+  border: 1px solid #f0d4bd;
+  border-radius: 5px 28px 5px 28px;
+  box-shadow: 0 15px 45px #8b496315;
+  position: relative;
+}
+
+.paper::before {
+  content: "❀";
+  position: absolute;
+  right: 22px;
+  top: 10px;
+  color: #e8b4c5;
+  font-size: 32px;
+}
+
+.paper h3 {
+  font-family: 'Dancing Script', cursive;
+  font-size: 37px;
+  color: #bc527c;
+  margin-bottom: 22px;
+}
+
+#letterText {
+  white-space: pre-line;
+  font-size: 15px;
+  line-height: 2.15;
+  min-height: 160px;
+}
+
+.signature {
+  font-family: 'Dancing Script', cursive;
+  color: #b44473;
+  font-size: 30px;
+  text-align: right;
+  margin-top: 25px;
+}
+
+.center { text-align: center; margin-top: 25px; }
+
+.garden {
+  background:
+    radial-gradient(ellipse at 10% 20%, #ffdeeb, transparent 45%),
+    linear-gradient(135deg, #fff9fb, #fce4ee);
+}
+
+.flower-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  max-width: 850px;
+  margin: auto;
+}
+
+.flower-card {
+  padding: 28px 12px;
+  text-align: center;
+  background: #ffffffb8;
+  border: 1px solid #f5ccdc;
+  border-radius: 22px;
+  cursor: pointer;
+  transition: .3s;
+}
+
+.flower-card:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 12px 25px #d36e8e24;
+}
+
+.flower-card .emoji {
+  font-size: 42px;
+  display: block;
+  margin-bottom: 13px;
+}
+
+.flower-card strong {
+  display: block;
+  color: #a83d69;
+  margin-bottom: 8px;
+}
+
+.flower-card small {
+  line-height: 1.7;
+  color: #95677b;
+}
+
+#flowerMessage {
+  text-align: center;
+  max-width: 600px;
+  margin: 25px auto 0;
+  color: #ad4772;
+  line-height: 1.9;
+  min-height: 30px;
+}
+
+.album {
+  background: #fffafc;
+}
+
+.upload-area {
+  max-width: 700px;
+  margin: 0 auto 25px;
+  padding: 24px;
+  border: 1px dashed #dc9ab5;
+  border-radius: 20px;
+  background: #fff4f8;
+  text-align: center;
+  line-height: 1.9;
+}
+
+.upload-area input {
+  max-width: 100%;
+  margin-top: 12px;
+}
+
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  max-width: 900px;
+  margin: auto;
+}
+
+.photo {
+  background: white;
+  padding: 9px;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px #91476512;
+  overflow: hidden;
+}
+
+.photo img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-radius: 10px;
+  display: block;
+}
+
+.photo p {
+  padding: 12px 4px 5px;
+  font-size: 12px;
+  text-align: center;
+  color: #a65d7d;
+}
+
+.wishes {
+  background: linear-gradient(145deg, #ffe7f0, #fff8fb);
+}
+
+.wish-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  max-width: 800px;
+  margin: auto;
+}
+
+.wish {
+  background: #ffffffc9;
+  padding: 24px;
+  border-radius: 20px;
+  border: 1px solid #f4d1df;
+  line-height: 1.9;
+}
+
+.wish span { font-size: 28px; }
+.wish h3 { margin: 10px 0; color: #a93667; }
+
+.countdown {
+  max-width: 750px;
+  margin: auto;
+  padding: 35px 20px;
+  text-align: center;
+  border: 1px solid #f3d4df;
+  background: white;
+  border-radius: 25px;
+  box-shadow: 0 10px 30px #d36e8e14;
+}
+
+.timer {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 22px;
+}
+
+.time-box {
+  background: #fff0f6;
+  border-radius: 15px;
+  min-width: 65px;
+  padding: 15px 9px;
+}
+
+.time-box strong {
+  display: block;
+  font-size: 25px;
+  color: #b13e6c;
+}
+
+.time-box small {
+  font-size: 11px;
+  color: #95677b;
+}
+
+.final-section {
+  text-align: center;
+  padding: 100px 20px;
+  color: #fff;
+  background: linear-gradient(145deg, #a83e6c, #e986aa, #bc527c);
+  position: relative;
+  overflow: hidden;
+}
+
+.final-section h2 {
+  font-size: clamp(42px, 9vw, 75px);
+  margin: 20px 0;
+}
+
+.final-section p {
+  max-width: 600px;
+  margin: auto;
+  line-height: 2;
+}
+
+.final-section .primary {
+  margin-top: 25px;
+  background: white;
+  color: #a93667;
+}
+
+footer {
+  text-align: center;
+  padding: 25px;
+  background: #fff7fa;
+  font-size: 12px;
+  color: #a56a83;
+  line-height: 2;
+}
+
+#heartLayer, #fireworkLayer {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+#heartLayer { z-index: 30; }
+
+#fireworkLayer {
+  z-index: 40;
+  display: none;
+}
+
+.floating {
+  position: absolute;
+  bottom: -50px;
+  animation: floatUp linear forwards;
+  opacity: .85;
+}
+
+.spark {
+  position: absolute;
+  font-size: 20px;
+  animation: sparkle 1.2s ease-out forwards;
+}
+
+#toast {
+  position: fixed;
+  z-index: 200;
+  bottom: 22px;
+  left: 50%;
+  transform: translateX(-50%) translateY(20px);
+  opacity: 0;
+  pointer-events: none;
+  padding: 13px 20px;
+  border-radius: 40px;
+  color: #92385e;
+  background: white;
+  box-shadow: 0 5px 25px #71304b24;
+  transition: .3s;
+  text-align: center;
+  width: max-content;
+  max-width: 90%;
+}
+
+#toast.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+@keyframes flowerFloat {
+  0%,100% { transform: translateY(0) rotate(-4deg); }
+  50% { transform: translateY(-12px) rotate(4deg); }
+}
+
+@keyframes floatUp {
+  to { transform: translateY(-115vh) rotate(360deg); opacity: 0; }
+}
+
+@keyframes sparkle {
+  from { transform: scale(.3); opacity: 1; }
+  to { transform: translate(var(--dx), var(--dy)) scale(1.8); opacity: 0; }
+}
+
+@media (max-width: 600px) {
+  header { padding: 12px 4%; }
+  .brand { font-size: 12px; }
+  .music-button { font-size: 11px; padding: 8px 10px; }
+  section { padding: 55px 5%; }
+  .flower-grid { grid-template-columns: 1fr; }
+  .photo-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .wish-grid { grid-template-columns: 1fr; }
+  .timer { gap: 6px; }
+  .time-box { min-width: 0; flex: 1; padding: 12px 5px; }
+  .time-box strong { font-size: 21px; }
+  .paper { padding: 25px 20px; }
+}
+</style>
+</head>
+
+<body>
+
+<!-- MÀN HÌNH MỞ QUÀ -->
+<div id="opening">
+  <div class="eyebrow">A little gift, a lot of love</div>
+  <div class="open-flower">💐</div>
+  <div class="script" style="font-size:30px;color:#a93667">
+    Dành riêng cho người con yêu nhất
+  </div>
+  <h1 class="script">Mẹ yêu của con</h1>
+  <p>
+    Có một món quà nhỏ con đã chuẩn bị,
+    mang theo tất cả tình yêu mà đôi khi
+    con chưa biết nói thành lời.
+  </p>
+  <button class="primary" onclick="startGift()">
+    💌 Mở món quà của mẹ
+  </button>
+  <p style="margin-top:20px;font-size:12px">
+    20 tháng 10 · Một ngày thật đặc biệt ♡
+  </p>
+</div>
+
+<header>
+  <div class="brand">🌷 GỬI MẸ YÊU · 20.10</div>
+  <button class="music-button" id="musicBtn" onclick="toggleMusic()">
+    🎵 Bật nhạc
+  </button>
+</header>
+
+<!-- TRANG CHỦ -->
+<main>
+<section class="hero" id="home">
+  <div class="hero-inner">
+    <div class="pill">✧ MÓN QUÀ ĐẶC BIỆT NHẤT ✧</div>
+    <div class="hero-flower">🌹</div>
+    <h1 class="script">Happy Women's Day</h1>
+    <p>
+      Gửi người phụ nữ đã dành cho con những điều tốt đẹp nhất.
+      Hôm nay, con muốn dành tặng mẹ một thế giới nhỏ,
+      nơi mỗi bông hoa đều là lời cảm ơn và mỗi trái tim
+      đều chứa đựng tình yêu của con.
+    </p>
+    <button class="primary" onclick="goTo('letter')">
+      Đọc thư của con ♡
+    </button>
+    <button class="secondary" onclick="goTo('garden')">
+      Khám phá món quà ✨
+    </button>
+  </div>
+</section>
+
+<!-- LÁ THƯ -->
+<section class="letter-section" id="letter">
+  <div class="section-title">
+    <div class="mini">A LETTER FOR MOM</div>
+    <h2 class="script">Lá thư gửi mẹ 💌</h2>
+    <p>Có những điều con muốn nói với mẹ từ rất lâu...</p>
+  </div>
+
+  <div class="paper">
+    <h3>Mẹ yêu dấu của con,</h3>
+    <div id="letterText">
+      Mẹ à,
+
+      Nhân ngày Phụ nữ Việt Nam 20/10, con muốn nói với mẹ rằng:
+      CON YÊU MẸ RẤT NHIỀU!
+
+      Cảm ơn mẹ vì đã luôn yêu thương, chăm sóc và kiên nhẫn
+      với con. Cảm ơn mẹ vì những điều bình dị mỗi ngày,
+      vì những lời nhắc nhở, những cái ôm và cả những lúc
+      mẹ âm thầm lo lắng cho con.
+
+      Con biết đôi khi con còn chưa ngoan, đôi khi làm mẹ buồn
+      và chưa nói được những lời yêu thương đúng lúc.
+      Nhưng mẹ hãy tin rằng mẹ luôn là người vô cùng đặc biệt
+      trong trái tim con.
+
+      Con chúc mẹ luôn mạnh khỏe, bình an, vui vẻ và hạnh phúc.
+      Mong rằng mỗi ngày của mẹ đều có thật nhiều tiếng cười,
+      thật nhiều yêu thương và thật ít những nỗi lo.
+
+      Con sẽ cố gắng trưởng thành hơn, học tập tốt hơn
+      và biết quan tâm đến mẹ nhiều hơn.
+      Con không hứa sẽ luôn hoàn hảo, nhưng con hứa sẽ luôn
+      cố gắng để mẹ cảm thấy tự hào và an lòng.
+
+      Nếu có một điều ước, con chỉ mong mẹ luôn khỏe mạnh,
+      luôn được yêu thương và ở bên gia đình thật lâu.
+
+      Cảm ơn mẹ vì đã là mẹ của con.
+      Với con, mẹ chính là món quà quý giá nhất trên đời. ♡
+    </div>
+
+    <div class="signature">
+      Con yêu mẹ rất nhiều! ❤️
+    </div>
+
+    <div class="center">
+      <button class="primary" onclick="readLetter()">
+        ✨ Đọc thư từng chữ
+      </button>
+      <button class="secondary" onclick="goTo('wishes')">
+        Những lời chúc dành cho mẹ
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- VƯỜN HOA TƯƠNG TÁC -->
+<section class="garden" id="garden">
+  <div class="section-title">
+    <div class="mini">A GARDEN FULL OF LOVE</div>
+    <h2 class="script">Vườn hoa của mẹ 🌸</h2>
+    <p>
+      Mỗi bông hoa mang một lời yêu thương.
+      Mẹ hãy thử chạm vào từng bông nhé!
+    </p>
+  </div>
+
+  <div class="flower-grid">
+    <button class="flower-card" onclick="pickFlower(0)">
+      <span class="emoji">🌹</span>
+      <strong>Hoa hồng</strong>
+      <small>Tình yêu con dành cho mẹ</small>
+    </button>
+
+    <button class="flower-card" onclick="pickFlower(1)">
+      <span class="emoji">🌻</span>
+      <strong>Hoa hướng dương</strong>
+      <small>Mong mẹ luôn rạng rỡ</small>
+    </button>
+
+    <button class="flower-card" onclick="pickFlower(2)">
+      <span class="emoji">🌷</span>
+      <strong>Hoa tulip</strong>
+      <small>Mong mẹ luôn bình an</small>
+    </button>
+
+    <button class="flower-card" onclick="pickFlower(3)">
+      <span class="emoji">🌼</span>
+      <strong>Hoa cúc</strong>
+      <small>Mong mẹ luôn mạnh khỏe</small>
+    </button>
+
+    <button class="flower-card" onclick="pickFlower(4)">
+      <span class="emoji">💐</span>
+      <strong>Bó hoa hạnh phúc</strong>
+      <small>Gửi mẹ ngàn niềm vui</small>
+    </button>
+
+    <button class="flower-card" onclick="pickFlower(5)">
+      <span class="emoji">💖</span>
+      <strong>Trái tim của con</strong>
+      <small>Luôn có mẹ ở bên trong</small>
+    </button>
+  </div>
+
+  <div id="flowerMessage" aria-live="polite">
+    Chạm vào một bông hoa để nhận lời chúc bí mật ♡
+  </div>
+</section>
+<section class="wishes" id="wishes">
+  <div class="section-title">
+    <div class="mini">MY WISHES FOR YOU</div>
+    <h2 class="script">Con chúc mẹ... 💗</h2>
+    <p>Bốn món quà nhỏ con muốn gửi đến mẹ.</p>
+  </div>
+
+  <div class="wish-grid">
+    <div class="wish">
+      <span>🌿</span>
+      <h3>Mạnh khỏe</h3>
+      <p>Mong mẹ luôn khỏe mạnh, ngủ ngon, ăn ngon và có thật nhiều năng lượng mỗi ngày.</p>
+    </div>
+    <div class="wish">
+      <span>☀️</span>
+      <h3>Bình an</h3>
+      <p>Mong những lo toan trong cuộc sống nhẹ nhàng hơn và mỗi ngày của mẹ đều bình yên.</p>
+    </div>
+    <div class="wish">
+      <span>🌈</span>
+      <h3>Hạnh phúc</h3>
+      <p>Mong mẹ luôn được yêu thương, được quan tâm và có nhiều khoảnh khắc thật vui bên gia đình.</p>
+    </div>
+    <div class="wish">
+      <span>💝</span>
+      <h3>Tự hào về con</h3>
+      <p>Con sẽ cố gắng từng ngày để trưởng thành, biết yêu thương và trở thành niềm vui của mẹ.</p>
+    </div>
+  </div>
+</section>
+<!-- KẾT THÚC -->
+<section class="final-section" id="final">
+  <div style="font-size:65px">💐</div>
+  <div class="eyebrow" style="color:#ffe5ee">WITH ALL MY LOVE</div>
+  <h2 class="script">Mẹ là điều tuyệt vời nhất</h2>
+  <p>
+    Cảm ơn mẹ vì đã đến bên cuộc đời con.
+    Chúc mẹ một ngày 20/10 ngập tràn niềm vui,
+    yêu thương và những điều dịu dàng nhất.
+  </p>
+  <p style="margin-top:18px;font-size:20px">
+    Con yêu mẹ hôm nay, ngày mai và thật nhiều ngày sau nữa. ❤️
+  </p>
+  <button class="primary" onclick="celebrate()">
+    🎆 Gửi mẹ một bầu trời yêu thương
+  </button>
+  <br>
+  <button class="secondary" style="margin-top:14px"
+          onclick="restartGift()">
+    ↻ Xem lại món quà
+  </button>
+</section>
+</main>
+
+<footer>
+  <div style="font-size:24px">♡ 🌷 ♡</div>
+  Một món quà nhỏ, được làm bằng tình yêu lớn.<br>
+  Dành riêng cho mẹ · 20/10<br>
+  <span>Made with love, just for Mom.</span>
+</footer>
+
+<div id="heartLayer"></div>
+<div id="fireworkLayer"></div>
+<div id="toast" role="status" aria-live="polite"></div>
+
+<audio id="music" loop preload="none">
+  <source src="nhac-me.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+// ==============================
+// 1. MỞ QUÀ
+// ==============================
+function startGift() {
+  document.getElementById('opening').classList.add('closed');
+  toast('Chúc mẹ có một ngày 20/10 thật hạnh phúc! 💗');
+  createHearts(18);
+  toggleMusic(true);
+}
+
+// ==============================
+// 2. DI CHUYỂN ĐẾN CÁC MỤC
+// ==============================
+function goTo(id) {
+  document.getElementById(id).scrollIntoView({
+    behavior: 'smooth',
+    block: 'start'
+  });
+}
+
+// ==============================
+// 3. NHẠC BẬT / TẮT
+// Đặt nhac-me.mp3 cạnh file HTML
+// ==============================
+const music = document.getElementById('music');
+const musicBtn = document.getElementById('musicBtn');
+
+async function toggleMusic(auto = false) {
+  if (music.paused) {
+    try {
+      await music.play();
+      musicBtn.textContent = '🔇 Tắt nhạc';
+    } catch (err) {
+      musicBtn.textContent = '🎵 Bật nhạc';
+      if (!auto) {
+        toast('Hãy đặt file nhac-me.mp3 cạnh file HTML nhé!');
+      }
+    }
+  } else {
+    music.pause();
+    musicBtn.textContent = '🎵 Bật nhạc';
+  }
+}
+
+// ==============================
+// 4. LÁ THƯ GÕ TỪNG CHỮ
+// ==============================
+const letterElement = document.getElementById('letterText');
+const originalLetter = letterElement.textContent.trim();
+let typingTimer = null;
+
+function readLetter() {
+  clearTimeout(typingTimer);
+  letterElement.textContent = '';
+  goTo('letter');
+
+  const text = originalLetter;
+  let index = 0;
+
+  function typeNext() {
+    if (index >= text.length) return;
+
+    letterElement.textContent += text[index];
+    index++;
+
+    // Cuộn nhẹ theo nội dung đang xuất hiện
+    if (index % 35 === 0) {
+      letterElement.scrollIntoView({
+        behavior: 'smooth',
+        block: 'nearest'
+      });
+    }
+
+    typingTimer = setTimeout(typeNext, 24);
+  }
+
+  typeNext();
+}
+
+// ==============================
+// 5. VƯỜN HOA BÍ MẬT
+// ==============================
+const flowerMessages = [
+  '🌹 Mẹ ơi, con yêu mẹ nhiều hơn những gì con có thể nói thành lời.',
+  '🌻 Mong nụ cười của mẹ luôn rạng rỡ như ánh mặt trời.',
+  '🌷 Mong cuộc sống của mẹ luôn dịu dàng, bình yên và đầy yêu thương.',
+  '🌼 Chúc mẹ luôn mạnh khỏe để cùng con tạo thêm thật nhiều kỷ niệm.',
+  '💐 Con tặng mẹ bó hoa đặc biệt nhất: tất cả tình yêu của con!',
+  '💖 Trong trái tim con, mẹ luôn có một vị trí không ai thay thế được.'
+];
+
+function pickFlower(index) {
+  document.getElementById('flowerMessage').textContent =
+    flowerMessages[index];
+
+  createHearts(8);
+}
+
+// ==============================
+// 6. ALBUM ẢNH TỪ MÁY TÍNH
+// Ảnh được hiển thị tại chỗ, không tải lên mạng
+// ==============================
+const photoInput = document.getElementById('photoInput');
+const photoGrid = document.getElementById('photoGrid');
+let photoUrls = [];
+
+photoInput.addEventListener('change', function() {
+  const files = Array.from(this.files || []);
+  const validFiles = files.filter(file =>
+    file.type.startsWith('image/')
+  );
+
+  if (!validFiles.length) {
+    toast('Cậu hãy chọn ít nhất một ảnh nhé! 🖼️');
+    return;
+  }
+
+  // Thu hồi URL của ảnh đã tạo trước đó
+  photoUrls.forEach(url => URL.revokeObjectURL(url));
+  photoUrls = [];
+
+  photoGrid.innerHTML = '';
+
+  validFiles.slice(0, 12).forEach((file, index) => {
+    const url = URL.createObjectURL(file);
+    photoUrls.push(url);
+
+    const card = document.createElement('div');
+    card.className = 'photo';
+
+    const img = document.createElement('img');
+    img.src = url;
+    img.alt = 'Kỷ niệm gia đình ' + (index + 1);
+    img.loading = 'lazy';
+
+    const caption = document.createElement('p');
+    caption.textContent = [
+      'Một khoảnh khắc yêu thương ♡',
+      'Gia đình là điều quý giá nhất',
+      'Con luôn trân trọng kỷ niệm này'
+    ][index % 3];
+
+    card.append(img, caption);
+    photoGrid.appendChild(card);
+  });
+
+  toast('Đã thêm ảnh vào album! 💗');
+});
+
+// ==============================
+// 7. ĐẾM NGƯỢC ĐẾN 20/10
+// ==============================
+function updateCountdown() {
+  const now = new Date();
+  let year = now.getFullYear();
+
+  let target = new Date(year, 9, 20, 0, 0, 0);
+
+  if (now >= target) {
+    target = new Date(year + 1, 9, 20, 0, 0, 0);
+  }
+
+  const diff = Math.max(0, target - now);
+
+  const days = Math.floor(diff / 86400000);
+  const hours = Math.floor(diff / 3600000) % 24;
+  const minutes = Math.floor(diff / 60000) % 60;
+  const seconds = Math.floor(diff / 1000) % 60;
+
+  document.getElementById('days').textContent =
+    String(days).padStart(2, '0');
+  document.getElementById('hours').textContent =
+    String(hours).padStart(2, '0');
+  document.getElementById('minutes').textContent =
+    String(minutes).padStart(2, '0');
+  document.getElementById('seconds').textContent =
+    String(seconds).padStart(2, '0');
+}
+
+updateCountdown();
+setInterval(updateCountdown, 1000);
+
+// ==============================
+// 8. TRÁI TIM BAY
+// ==============================
+function createHearts(amount = 1) {
+  const layer = document.getElementById('heartLayer');
+  const symbols = ['💗', '💕', '💖', '🌸', '🌷', '✨'];
+
+  for (let i = 0; i < amount; i++) {
+    setTimeout(() => {
+      const heart = document.createElement('span');
+      heart.className = 'floating';
+      heart.textContent =
+        symbols[Math.floor(Math.random() * symbols.length)];
+
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.fontSize = (16 + Math.random() * 22) + 'px';
+      heart.style.animationDuration = (5 + Math.random() * 5) + 's';
+
+      layer.appendChild(heart);
+      setTimeout(() => heart.remove(), 11000);
+    }, i * 90);
+  }
+}
+
+setInterval(() => createHearts(1), 1200);
+
+// ==============================
+// 9. PHÁO HOA TRÁI TIM
+// ==============================
+let celebrationTimer = null;
+
+function celebrate() {
+  const layer = document.getElementById('fireworkLayer');
+  layer.style.display = 'block';
+
+  createHearts(35);
+
+  const symbols = ['💖', '✨', '💗', '🌟', '💕'];
+
+  for (let i = 0; i < 85; i++) {
+    setTimeout(() => {
+      const spark = document.createElement('span');
+      spark.className = 'spark';
+      spark.textContent =
+        symbols[Math.floor(Math.random() * symbols.length)];
+
+      spark.style.left = Math.random() * 100 + 'vw';
+      spark.style.top = (15 + Math.random() * 70) + 'vh';
+      spark.style.setProperty('--dx', (Math.random() * 150 - 75) + 'px');
+      spark.style.setProperty('--dy', (Math.random() * 150 - 75) + 'px');
+
+      layer.appendChild(spark);
+      setTimeout(() => spark.remove(), 1500);
+    }, i * 35);
+  }
+
+  toast('Mẹ ơi, con yêu mẹ nhiều lắm! 💝');
+
+  clearTimeout(celebrationTimer);
+  celebrationTimer = setTimeout(() => {
+    layer.style.display = 'none';
+  }, 5000);
+}
+
+// ==============================
+// 10. THÔNG BÁO NHỎ
+// ==============================
+let toastTimer;
+
+function toast(message) {
+  const element = document.getElementById('toast');
+  element.textContent = message;
+  element.classList.add('show');
+
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => {
+    element.classList.remove('show');
+  }, 3000);
+}
+
+// ==============================
+// 11. XEM LẠI MÓN QUÀ
+// ==============================
+function restartGift() {
+  clearTimeout(typingTimer);
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+
+  setTimeout(() => {
+    document.getElementById('opening').classList.remove('closed');
+  }, 400);
+}
+</script>
+
+</body>
+</html>
